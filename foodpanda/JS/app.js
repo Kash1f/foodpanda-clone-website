@@ -1,3 +1,4 @@
+//declaring variables
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
@@ -13,45 +14,86 @@ closeShopping.addEventListener('click', ()=>{
     body.classList.remove('active');
 })
 
+//listing products
+
 let products = [
-    {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: '1.PNG',
-        price: 120000
-    },
-    {
-        id: 2,
-        name: 'PRODUCT NAME 2',
-        image: '2.PNG',
-        price: 120000
-    },
-    {
-        id: 3,
-        name: 'PRODUCT NAME 3',
-        image: '3.PNG',
-        price: 220000
-    },
-    {
-        id: 4,
-        name: 'PRODUCT NAME 4',
-        image: '4.PNG',
-        price: 123000
-    },
-    {
-        id: 5,
-        name: 'PRODUCT NAME 5',
-        image: '5.PNG',
-        price: 320000
-    },
-    {
-        id: 6,
-        name: 'PRODUCT NAME 6',
-        image: '6.PNG',
-        price: 120000
-    }
+        {
+            id: 1,
+            name: 'Agha Juice',
+            image: '1.jpg',
+            price: 'Rs ' + 450
+        },
+        {
+            id: 2,
+            name: "Ghousia",
+            image: '../image/ghousia.jpg',
+            price: 'Rs ' + 1200
+        },
+        {
+            id: 3,
+            name: "McDonald's",
+            image: '../image/5.jpg',
+            price: 'Rs ' + 800
+        },
+        {
+            id: 4,
+            name: 'Subway',
+            image: '3.jpg',
+            price: 'Rs ' + 650
+        },
+        {
+            id: 5,
+            name: 'Hardees',
+            image: '4.jpg',
+            price: 'Rs ' + 3000
+        },
+        {
+            id: 6,
+            name: 'Soda Stream',
+            image: '../image/sodastream.jpg',
+            price: 'Rs ' + 700
+        },
+        {
+            id: 7,
+            name: 'Agha Juice',
+            image: '1.jpg',
+            price: 'Rs ' + 450
+        },
+        {
+            id: 8,
+            name: "Zam Zam Foods",
+            image: '../image/zamzam.jpg',
+            price: 'Rs ' + 1200
+        },
+        {
+            id: 9,
+            name: 'Subway',
+            image: '3.jpg',
+            price: 'Rs ' + 650
+        },
+        {
+            id: 10,
+            name: "Mehran Ice Cream",
+            image: '../image/mehran.jpg',
+            price: 'Rs ' + 400
+        },
+        {
+            id: 11,
+            name: 'Hardees',
+            image: '4.jpg',
+            price: 'Rs ' + 3000
+        },
+        {
+            id: 12,
+            name: 'KFC',
+            image: '6.jpg',
+            price: 'Rs ' + 700
+        },
+        
 ];
 let listCards  = [];
+
+//function to create items
 function initApp(){
     products.forEach((value, key) =>{
         let newDiv = document.createElement('div');
@@ -60,11 +102,14 @@ function initApp(){
             <img src="image/${value.image}">
             <div class="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCard(${key})">Add To Card</button>`;
+            <button onclick="addToCard(${key})">Add To Cart</button>`;
         list.appendChild(newDiv);
     })
 }
 initApp();
+
+//function to add items
+
 function addToCard(key){
     if(listCards[key] == null){
         // copy product form list to list card
@@ -73,6 +118,8 @@ function addToCard(key){
     }
     reloadCard();
 }
+
+//function to reload items
 function reloadCard(){
     listCard.innerHTML = '';
     let count = 0;
@@ -90,13 +137,16 @@ function reloadCard(){
                     <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
                     <div class="count">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>`;
+                </div>
+                `;
                 listCard.appendChild(newDiv);
         }
     })
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
+
+//function to change quantity
 function changeQuantity(key, quantity){
     if(quantity == 0){
         delete listCards[key];
@@ -106,3 +156,5 @@ function changeQuantity(key, quantity){
     }
     reloadCard();
 }
+
+//end
