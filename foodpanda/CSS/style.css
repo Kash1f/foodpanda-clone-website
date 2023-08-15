@@ -3,7 +3,6 @@ body{
     font-family: system-ui;
 }
 
-
 body {
   background-image: url(../image/fp-home.jpg);
   font-family: system-ui;
@@ -99,7 +98,6 @@ body {
   font-size: 15px;
 }
 
-
 .dropdown-nav {
   position: relative;
   display: inline-block;
@@ -115,11 +113,10 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
-
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-in;
-  transition: max-height 0.2s ease-in;
+  transition: max-height 0.3s ease-in;
 }
 
 .dropdown-content-nav a {
@@ -141,7 +138,6 @@ body {
   -webkit-transition: max-height 0.2s ease-in;
   transition: max-height 0.2s ease-in;
 }
-
 
 @media (max-width: 600px) {
   .nav > .nav-btn {
