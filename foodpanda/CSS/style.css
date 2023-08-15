@@ -186,7 +186,6 @@ body {
   }
 }
 
-
 .shadow-remove:focus {
   border: 0px !important;
   box-shadow: none !important;
@@ -231,7 +230,7 @@ header .shopping{
     text-align: right;
 }
 header .shopping img{
-    width: 40px;
+    width: 38px;
 }
 header .shopping span{
     background: red;
@@ -248,7 +247,7 @@ header .shopping span{
 .list{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 13px;
+    column-gap: 15px;
     row-gap: 11px;
     margin-top: 28px;
 }
