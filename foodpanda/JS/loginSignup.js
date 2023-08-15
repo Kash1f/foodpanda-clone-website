@@ -1,4 +1,3 @@
-
 //function to store data
 function store(){
   var name = document.getElementById('signup_name');
